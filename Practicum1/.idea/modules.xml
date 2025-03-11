@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Practicum1.iml" filepath="$PROJECT_DIR$/.idea/Practicum1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prime-service/prime-service.iml" filepath="$PROJECT_DIR$/prime-service/prime-service.iml" />
     </modules>
   </component>
 </project>
