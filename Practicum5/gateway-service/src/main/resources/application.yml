@@ -1,0 +1,29 @@
+
+server:
+  port: 8180
+  netty:
+    connection-timeout: 2s
+    idle-timeout: 15s
+    shutdown: graceful
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+
+spring:
+  application:
+    name: gateway-service
+Lifecycle:
+  timeout-per-shutdown-phase: 15s
+cloud:
+  gateway:
+    routes:
+     id: authentication-service
+    uri: ${AUTHENTICATION_SERVICE_URL:http://primes-service:8080}/auth
+    predicates:
+       Path=/auth/**
+
+    id: primes-service
+    uri: ${PRIMES_SERVICE_URL:http://primes-service:8080}/primes
+    predicates:
+       Path=/primes/**
