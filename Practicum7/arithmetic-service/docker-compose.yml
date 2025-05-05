@@ -1,0 +1,13 @@
+services:
+    gateway-service:
+    image: arithmetic-service
+    build:
+    context: .. /arithmetic-service
+    dockerfile: Dockerfile
+    container_name: gateway-service
+    ports:
+      "4000:8180"
+    depends_on:
+      primes-service
+    environment:
+       server.port=8180
